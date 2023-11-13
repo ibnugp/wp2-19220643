@@ -9,11 +9,18 @@
                         <div class="col-lg">
                             <div class="p-5">
                                 <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">Halaman Login!!</h1>
+                                    <h1 class="h4 text-gray-900 mb-4">Daftar Menjadi Member!</h1>
                                 </div>
                                 <?= $this->session->flashdata('pesan') ?>
 
-                                <form class="user" method="POST" action="<?= base_url() ?>">
+                                <form class="user" method="POST"
+                                    action="<?= base_url('authentication/registration') ?>">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-user"
+                                            value="<?= set_value('nama') ?>" id="nama"
+                                            placeholder="Masukkan nama lengkap" name="nama">
+                                        <?= form_error('nama', '<small class="text-danger pl-3">', '</small>') ?>
+                                    </div>
                                     <div class="form-group">
                                         <input type="text" class="form-control form-control-user"
                                             value="<?= set_value('email') ?>" id="email"
@@ -21,9 +28,14 @@
                                         <?= form_error('email', '<small class="text-danger pl-3">', '</small>') ?>
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control form-control-user" id="password"
-                                            placeholder="Password" name="password">
-                                        <?= form_error('password', '<small class="text-danger pl-3">', '</small>') ?>
+                                        <input type="password" class="form-control form-control-user" id="password1"
+                                            placeholder="Password" name="password1">
+                                        <?= form_error('password1', '<small class="text-danger pl-3">', '</small>') ?>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control form-control-user" id="password2"
+                                            placeholder="Password" name="password2">
+                                        <?= form_error('password2', '<small class="text-danger pl-3">', '</small>') ?>
                                     </div>
                                     <button type="submit" class="btn btn-primary btn-user btn-block">
                                         Masuk

@@ -60,6 +60,7 @@ class User_model extends CI_Model
         $this->db->limit(10, 0);
         return $this->db->get();
     }
+    
 }
 
 /* End of file User_model.php */
